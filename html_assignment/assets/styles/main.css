@@ -1,0 +1,69 @@
+body {
+    background-color: #fff;
+}
+
+.appbar {
+    background-color: #000;
+    box-sizing: border-box;
+    height: 70;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.appbar .title {
+    color: #fff;
+    font-weight: 500;
+    font-size: 35;
+}
+
+.main_body {
+
+}
+
+.main_body .bg-black-color {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 500;
+    width: 100vw;
+    z-index: -1;
+    background-color: #000;
+}
+
+.form-container {
+    background-color: #fff;
+}
+
+.input-style {
+    padding: 30px 20px;
+    border-color: #000;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.input-style:focus {
+    /* border-color: red; */
+    border: 3px solid #b9ff40;
+    box-shadow: none;
+}
+
+.submit-button {
+    background-color: #b9ff40;
+    border: 0px;
+    color: #000;
+    font-weight: 500;
+}
+.submit-button:active {
+    background-color: #b9ff40;
+}
+.submit-button:focus {
+    background-color: #b9ff40;
+}
+.submit-button:hover {
+    background-color: #b9ff40;
+}
+
+.footer-container {
+    width: 100%;
+    background-color: rgba(0,0,0,0.2);
+    min-height: 200;
+}
