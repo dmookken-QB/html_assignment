@@ -5,8 +5,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="assets/styles/main.css">
+    <script src="assets/scripts/app.js"></script>
 </head>
 <body>
     <div class="d-flex appbar align-items-center fixed-top">
@@ -36,34 +38,83 @@
                         <div style="height: 60px;"></div>
                         <h5 class="text-dark">Fields marked with an <span class="text-danger">*</span> are required.</h5>
                         <div style="height: 40px;"></div>
-                        <form>
+                        <form onsubmit="alert('Successfully submitted the form')">
                             <div class="form-group pb-3">
-                              <label for="usr" class="" style="font-size: 20; color: #000;">First Name<span class="text-danger">*</span></label>
-                              <input type="text" class="form-control form-control-lg input-style" id="usr" name="username" placeholder="Enter your first name">
+                              <label for="first-name" class="" style="font-size: 20; color: #000;">First Name<span class="text-danger">*</span></label>
+                              <input type="text" required class="form-control form-control-lg input-style" id="first-name" pattern="[A-Za-z]*" title="Characters only" name="username" placeholder="Enter your first name">
                             </div>
                             <div class="form-group pb-3">
-                              <label for="usr" class="" style="font-size: 20; color: #000;">Last Name<span class="text-danger">*</span></label>
-                              <input type="text" class="form-control form-control-lg input-style" id="usr" name="username" placeholder="Enter your last name">
+                              <label for="last-name" class="" style="font-size: 20; color: #000;">Last Name<span class="text-danger">*</span></label>
+                              <input type="text" required class="form-control form-control-lg input-style" id="last-name" pattern="[A-Za-z]*" title="Characters only" name="username" placeholder="Enter your last name">
                             </div>
                             <div class="form-group pb-3">
-                              <label for="usr" class="" style="font-size: 20; color: #000;">Email<span class="text-danger">*</span></label>
-                              <input type="text" class="form-control form-control-lg input-style" id="usr" name="username" placeholder="Enter your email">
+                              <label for="email" class="" style="font-size: 20; color: #000;">Email<span class="text-danger">*</span></label>
+                              <input type="email" required class="form-control form-control-lg input-style" id="email" name="email" placeholder="Enter your email">
                             </div>
                             <div class="form-group pb-3">
-                              <label for="usr" class="" style="font-size: 20; color: #000;">Age<span class="text-danger">*</span></label>
-                              <input type="text" class="form-control form-control-lg input-style" id="usr" name="username" placeholder="Enter your age">
+                              <label for="age" class="" style="font-size: 20; color: #000;">Age<span class="text-danger">*</span></label>
+                              <input type="number" required class="form-control form-control-lg input-style" id="age" name="age" min="18" placeholder="Enter your age">
                             </div>
                             <div class="form-group pb-3">
-                              <label for="usr" class="" style="font-size: 20; color: #000;">Mobile No<span class="text-danger">*</span></label>
-                              <input type="text" class="form-control form-control-lg input-style" id="usr" name="username" placeholder="Enter your mobile no">
+                              <label for="tel" class="" style="font-size: 20; color: #000;">Mobile No<span class="text-danger">*</span></label>
+                              <div class="d-flex">
+                                <select required  class="form-control input-style" name="country-code" style="width: 100px;" id="sel1">
+                                  <option value="+91">+90</option>
+                                  <option value="+92" selected>+91</option>
+                                  <option value="+93">+92</option>
+                                  <option value="+94">+93</option>
+                                </select>
+                                <div style="width: 10px"></div>
+                                <input type="tel" class="form-control form-control-lg input-style flex-grow-1" id="tel" name="username" placeholder="Enter your mobile no">
+                              </div>
                             </div>
                             <div class="form-group pb-3">
                               <label for="usr" class="" style="font-size: 20; color: #000;">Do you have a Motor Vehicle License<span class="text-danger">*</span></label>
-                              <input type="text" class="form-control form-control-lg input-style" id="usr" name="username" placeholder="Have vehicle license">
+                              <select id="have-vehicle-select" required class="form-control input-style" name="vehicle" id="vehicle" onchange="hideTypeOfVehicle()">
+                                <option value="yes" selected>Yes</option>
+                                <option value="no">No</option>
+                              </select>
                             </div>
+                            <div class="form-group pb-3" id="vehicle-type-input">
+                              <label for="vehicle-type" style="font-size: 20; color: #000;">Type of Vehicle<span class="text-danger">*</span></label>
+                              <div class="vehicle-type-container d-flex align-items-center">
+                                <input type="text" id="vehilce-input" class="form-control vehicle-type-input" value="" readonly style="border:0;" placeholder="Select your vehicle type" name="search" />
+                                <div class="d-flex input-group-btn">
+                                  <label class="radio-container">
+                                    <input type="radio" name="vehicle-type">
+                                    <span class="radio-vehicle-icon">
+                                      <i class="fa fa-car fa-lg" aria-hidden="true" onclick="changeVehicleType('CAR')"></i>
+                                    </span>
+                                  </label>
+                                  <div style="width: 20px;"></div>
+                                  <label class="radio-container">
+                                    <input type="radio" name="vehicle-type">
+                                    <span class="radio-vehicle-icon">
+                                      <i class="fa fa-motorcycle fa-lg" aria-hidden="true" onclick="changeVehicleType('BIKE')"></i>
+                                    </span>
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form-group pb-3">
+                              <label for="usr" class="" style="font-size: 20; color: #000;">How did you find out about Us<span class="text-danger">*</span></label>
+                              <select required class="form-control input-style" name="findus" id="findus">
+                                <option value="0">You were looking actively for jobs</option>
+                                <option value="1" selected>You have a colleague or friend in the company</option>
+                                <option value="1" selected>You read an article, press release, or other news source saying they were hiring</option>
+                                <option value="1" selected>You were contacted by a recruiter who put you in touch with the company</option>
+                                <option value="1" selected>You were visiting their website for another reason</option>
+                              </select>
+                            </div>
+                            <div class="form-group pb-3">
+                              <label for="age" class="" style="font-size: 20; color: #000;">Skills you can offer<span class="text-danger">*</span></label>
+                              <textarea class="form-control form-control-lg input-style" id="age" name="skills" placeholder="Enter your skills">
+                              </textarea>
+                            </div>
+                            <div style="height: 50px;"></div>
                             <div class="form-group form-check pb-3">
                               <label class="form-check-label">
-                                <input class="form-check-input" type="checkbox"> I agree with the terms and conditions
+                                <input required class="form-check-input" type="checkbox"> I agree with the terms and conditions
                               </label>
                             </div>
                             <div style="height: 10px;"></div>

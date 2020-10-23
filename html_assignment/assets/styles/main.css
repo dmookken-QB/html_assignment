@@ -34,7 +34,8 @@ body {
 }
 
 .input-style {
-    padding: 30px 20px;
+    text-indent: 5px;
+    height: 60px;
     border-color: #000;
     border-radius: 0;
     box-shadow: none;
@@ -66,4 +67,51 @@ body {
     width: 100%;
     background-color: rgba(0,0,0,0.2);
     min-height: 200;
+}
+
+.radio-container {
+    display: block;
+    position: relative;
+    width: 50px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.radio-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.radio-vehicle-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+.radio-container:hover input ~ .radio-vehicle-icon {
+    /* background-color: #ccc; */
+}
+
+.radio-container input:checked ~ .radio-vehicle-icon {
+    color: #b9ff40;
+}
+
+.vehicle-type-container {
+    text-indent: 5px;
+    height: 60px;
+    padding: 0px 10px;
+    border: 1px solid #000;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.vehicle-type-input:read-only {
+    background-color: #fff;
+}
+
+.vehicle-type-input:focus {
+    /* background-color: red; */
+    border: 3px solid #b9ff40;
+    box-shadow: none;
 }
