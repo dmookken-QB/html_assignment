@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="assets/jsScript.js"></script>
+</head>
+<body>
+    <div class="root d-flex justify-content-center align-items-center">
+        <div class="calcRoot d-flex flex-column">
+            <div class="display flex-grow-1">
+                <div style="height: 20px;"></div>
+                <div class="inputString" id="input"></div>
+                <div style="height: 20px;"></div>
+                <div class="outputString" id="answer">0</div>
+            </div>
+            <div class="buttonSecion container-fluid">
+                <div class="row">
+                    <div class="bGrid col-3"><div class="button mobEqualWidth clear" onclick="buttonPressed('c')"><span class="number">C</span></div></div>
+                    <div class="bGrid col-3"></div>
+                    <div class="bGrid col-3"></div>
+                    <div class="bGrid col-3"><div class="button mobEqualWidth operator" onclick="buttonPressed('/')"><span class="number">/</span></div></div>
+                </div>
+                <div class="row">
+                    <div class="bGrid col-3"><div class="button mobEqualWidth" onclick="buttonPressed('7')"><span class="number">7</span></div></div>
+                    <div class="bGrid col-3"><div class="button mobEqualWidth" onclick="buttonPressed('8')"><span class="number">8</span></div></div>
+                    <div class="bGrid col-3"><div class="button mobEqualWidth" onclick="buttonPressed('9')"><span class="number">9</span></div></div>
+                    <div class="bGrid col-3"><div class="button mobEqualWidth operator" onclick="buttonPressed('*')"><span class="number">X</span></div></div>
+                </div>
+                <div class="row">
+                    <div class="bGrid col-3"><div class="button mobEqualWidth" onclick="buttonPressed('4')"><span class="number">4</span></div></div>
+                    <div class="bGrid col-3"><div class="button mobEqualWidth" onclick="buttonPressed('5')"><span class="number">5</span></div></div>
+                    <div class="bGrid col-3"><div class="button mobEqualWidth" onclick="buttonPressed('6')"><span class="number">6</span></div></div>
+                    <div class="bGrid col-3"><div class="button mobEqualWidth operator" onclick="buttonPressed('-')"><span class="number">-</span></div></div>
+                </div>
+                <div class="row">
+                    <div class="bGrid col-3"><div class="button mobEqualWidth" onclick="buttonPressed('1')"><span class="number">1</span></div></div>
+                    <div class="bGrid col-3"><div class="button mobEqualWidth" onclick="buttonPressed('2')"><span class="number">2</span></div></div>
+                    <div class="bGrid col-3"><div class="button mobEqualWidth" onclick="buttonPressed('3')"><span class="number">3</span></div></div>
+                    <div class="bGrid col-3"><div class="button mobEqualWidth operator" onclick="buttonPressed('+')"><span class="number">+</span></div></div>
+                </div>
+                <div class="row">
+                    <div class="bGrid col-6 flex-grow-1"><div class="button" onclick="buttonPressed('0')"><span class="number">0</span></div></div>
+                    <div class="bGrid col-3"><div class="button mobEqualWidth" onclick="buttonPressed('.')"><span class="number">.</span></div></div>
+                    <div class="bGrid col-3"><div class="button mobEqualWidth equal" onclick="buttonPressed('=')"><span class="number">=</span></div></div>
+                </div>
+                <div style="height: 10px;"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
