@@ -11,6 +11,17 @@ var evaluateExpression = '';
 
 
 function buttonPressed(buttonKey) {
+    if(buttonKey == '=') {
+        console.log('Screen cleared.');
+        // document.getElementById("answer").innerHTML = '0';
+        document.getElementById("input").innerHTML = '';
+        answer = 0;
+        previousOperator = '+';
+        presentNumber = 0;
+        previousAnswer = 0.0
+        return;
+    }
+
     if(buttonKey == 'c') {
         console.log('Screen cleared.');
         document.getElementById("answer").innerHTML = '0';
