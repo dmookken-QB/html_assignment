@@ -19,6 +19,7 @@ function buttonPressed(buttonKey) {
         previousOperator = '+';
         presentNumber = 0;
         previousAnswer = 0.0
+        processInputString=''
         return;
     }
 
@@ -30,6 +31,7 @@ function buttonPressed(buttonKey) {
         previousOperator = '+';
         presentNumber = 0;
         previousAnswer = 0.0
+        processInputString=''
         return;
     }
 
@@ -52,7 +54,7 @@ function buttonPressed(buttonKey) {
         previousAnswer = eval(evaluateExpression)
 
         // console.log(processInputString, " = ", previousAnswer);
-        document.getElementById("answer").innerHTML = previousAnswer;
+        document.getElementById("answer").innerHTML = eval(processInputString);
         $("#input").append(`${buttonKey}`);
     }
 }
